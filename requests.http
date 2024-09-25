@@ -1,0 +1,11 @@
+### Create order
+POST localhost:9002/orders
+Content-Type: application/json
+
+{
+  "isbn": "1234567890",
+  "quantity": 3
+}
+
+### Get orders
+GET localhost:9002/orders
