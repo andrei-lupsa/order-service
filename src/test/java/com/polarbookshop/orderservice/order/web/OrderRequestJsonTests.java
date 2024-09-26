@@ -7,7 +7,7 @@ import org.springframework.boot.test.json.JacksonTester;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@JsonTest
+@JsonTest(properties = "spring.cloud.config.enabled=false")
 class OrderRequestJsonTests {
 
     @Autowired

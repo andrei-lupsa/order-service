@@ -13,7 +13,8 @@ import reactor.core.publisher.Mono;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 
-@WebFluxTest(OrderController.class)
+@WebFluxTest(controllers = OrderController.class,
+        properties = "spring.cloud.config.enabled=false")
 class OrderControllerWebFluxTests {
 
     @Autowired

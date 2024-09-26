@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import reactor.test.StepVerifier;
 
-@DataR2dbcTest
+@DataR2dbcTest(properties = "spring.cloud.config.enabled=false")
 @Import(DataConfig.class)
 @Testcontainers
 @ImportTestcontainers(TestContainers.class)

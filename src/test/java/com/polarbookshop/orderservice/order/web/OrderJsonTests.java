@@ -11,7 +11,7 @@ import java.time.Instant;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@JsonTest
+@JsonTest(properties = "spring.cloud.config.enabled=false")
 class OrderJsonTests {
 
     @Autowired

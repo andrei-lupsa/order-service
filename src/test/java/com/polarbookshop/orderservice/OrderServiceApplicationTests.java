@@ -20,7 +20,8 @@ import static org.mockito.BDDMockito.given;
 
 @Testcontainers
 @ImportTestcontainers(TestContainers.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+        properties = "spring.cloud.config.enabled=false")
 class OrderServiceApplicationTests {
 
     @Autowired
