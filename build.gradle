@@ -59,3 +59,16 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+bootBuildImage {
+    docker {
+        if (project.hasProperty('docker.url') && project.hasProperty('docker.username')) {
+            imageName = "${project.properties['docker.url']}/${project.properties['docker.username']}/${project.name}:${project.version}"
+        }
+        publishRegistry {
+            project.findProperty("docker.url")?.with { url = it }
+            project.findProperty("docker.username")?.with { username = it }
+            project.findProperty("docker.token")?.with { password = it }
+        }
+    }
+}
