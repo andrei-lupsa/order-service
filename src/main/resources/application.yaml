@@ -67,7 +67,7 @@ management:
       exposure:
         include:
           - health
-  #          - refresh
+          - prometheus
   endpoint:
     health:
       show-details: always

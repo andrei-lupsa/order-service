@@ -41,6 +41,7 @@ dependencies {
     runtimeOnly 'org.springframework:spring-jdbc'
     runtimeOnly 'org.postgresql:postgresql'
     runtimeOnly 'org.postgresql:r2dbc-postgresql'
+    runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.springframework.cloud:spring-cloud-stream-test-binder'
     testImplementation 'org.springframework.security:spring-security-test'
