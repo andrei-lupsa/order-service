@@ -67,7 +67,13 @@ management:
       exposure:
         include:
           - health
-          - refresh
+  #          - refresh
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true #alway enable readiness and liveness probes, not just for Kubernetes
 
 polar:
   catalog-service-uri: http://localhost:9001
