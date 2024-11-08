@@ -61,12 +61,24 @@ spring:
         jwt:
           issuer-uri: http://polar-keycloak:8080/realms/PolarBookshop
 
+info:
+  system: Polar Bookshop
+
 management:
   endpoints:
     web:
       exposure:
         include:
+          - bindings
+          - configprops
+          - env
+          - flyway
+          - functions
           - health
+          - heapdump
+          - info
+          - loggers
+          - mappings
           - prometheus
   endpoint:
     health:
@@ -74,6 +86,13 @@ management:
       show-components: always
       probes:
         enabled: true #alway enable readiness and liveness probes, not just for Kubernetes
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true
   metrics:
     tags:
       application: ${spring.application.name}

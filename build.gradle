@@ -67,6 +67,10 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+springBoot {
+    buildInfo()
+}
+
 bootBuildImage {
     docker {
         if (project.hasProperty('docker.url') && project.hasProperty('docker.username')) {
