@@ -83,3 +83,7 @@ polar:
   timeout: 3s
   retry-backoff-max-attempts: 3
   retry-min-backoff: 100ms
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

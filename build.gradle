@@ -15,6 +15,7 @@ java {
 
 ext {
     set('springCloudVersion', "2023.0.3")
+    set('otelVersion', "2.9.0")
     set('testKeycloakVersion', "3.5.1")
 }
 
@@ -42,6 +43,7 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     runtimeOnly 'org.postgresql:r2dbc-postgresql'
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+    runtimeOnly "io.opentelemetry.javaagent:opentelemetry-javaagent:$otelVersion"
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.springframework.cloud:spring-cloud-stream-test-binder'
     testImplementation 'org.springframework.security:spring-security-test'
