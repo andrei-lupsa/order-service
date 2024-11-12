@@ -41,7 +41,7 @@ jobs:
         with:
           kubeconform: 0.6.7
           command: |
-            kubeconform -verbose -strict -kubernetes-version 1.30.4 k8s
+            kustomize build k8s | kubeconform -verbose -strict -kubernetes-version 1.30.4
 
   package:
     name: Package and Publish

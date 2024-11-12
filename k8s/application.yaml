@@ -1,0 +1,16 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://polar-postgres:5432/polardb_order
+  flyway:
+    url: jdbc:postgresql://polar-postgres:5432/polardb_order
+  rabbitmq:
+    host: polar-rabbitmq
+    port: 5672
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://polar-keycloak/realms/PolarBookshop
+
+polar:
+  catalog-service-uri: http://catalog-service

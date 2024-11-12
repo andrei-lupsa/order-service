@@ -27,10 +27,6 @@ spec:
           env:
             - name: BPL_JVM_THREAD_COUNT
               value: "50"
-            - name: SPRING_PROFILES_ACTIVE
-              value: k8s
-            - name: SPRING_CLOUD_CONFIG_URI
-              value: http://config-service
           lifecycle:
             preStop:
               exec:
@@ -47,3 +43,10 @@ spec:
               port: 9002
             initialDelaySeconds: 5
             periodSeconds: 15
+          volumeMounts:
+            - name: order-config-volume
+              mountPath: /workspace/config
+      volumes:
+        - name: order-config-volume
+          configMap:
+            name: order-config
