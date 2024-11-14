@@ -24,9 +24,6 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9002
-          env:
-            - name: BPL_JVM_THREAD_COUNT
-              value: "50"
           lifecycle:
             preStop:
               exec:
