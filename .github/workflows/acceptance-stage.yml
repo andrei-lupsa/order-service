@@ -4,8 +4,16 @@ on:
     workflows: ["Commit Stage"]
     types: [completed]
     branches: master
+  workflow_call:
+    secrets:
+      DISPATCH_TOKEN:
+        required: true
 concurrency: acceptance
 
 jobs:
   acceptance-stage:
     uses: andrei-lupsa/polar-deployment/.github/workflows/acceptance-stage.yml@master
+    with:
+      app_repo: order-service
+    secrets:
+      DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
